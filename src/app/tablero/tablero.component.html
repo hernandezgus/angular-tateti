@@ -1,0 +1,13 @@
+<h1>Current player: {{ player }}</h1>
+
+<h2 *ngIf="ganador">
+    Player {{ ganador }} won the game!
+</h2>
+
+<button (click)="nuevoJuego()">Start New Game</button>
+
+<main>
+    <app-ficha *ngFor="let ficha of fichas; let i = index;" [valor]="ficha" (click)="hacerMovimiento(i)">
+
+    </app-ficha>
+</main>
